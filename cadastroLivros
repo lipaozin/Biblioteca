@@ -1,0 +1,30 @@
+biblioteca = []
+
+def adicionar_livro():
+    livro = {}
+    livro['título'] = input('Digite o título do livro: ')
+    livro['autor'] = input('Digite o nome do autor: ')
+    livro['ano'] = input('Digite o ano de publicação: ')
+    biblioteca.append(livro)
+    print('Livro adicionado com sucesso!')
+
+def remover_livro():
+    titulo = input('Digite o título do livro que deseja remover: ')
+    for livro in biblioteca:
+        if livro['título'] == titulo:
+            biblioteca.remove(livro)
+            print('Livro removido com sucesso!')
+            return
+    print('Livro não encontrado.')
+
+def exibir_livros():
+    for livro in biblioteca:
+        print(f"Título: {livro['título']}, Autor: {livro['autor']}, Ano: {livro['ano']}")
+
+def pesquisar_livro():
+    titulo = input('Digite o título do livro que deseja pesquisar: ')
+    for livro in biblioteca:
+        if livro['título'] == titulo:
+            print(f"Título: {livro['título']}, Autor: {livro['autor']}, Ano: {livro['ano']}")
+            return
+    print('Livro não encontrado.')
